@@ -29,13 +29,14 @@ class _SignInState extends State<SignIn> {
             height: MediaQuery.of(context).size.height * 0.1,
           ),
           Container(
-            height: MediaQuery.of(context).size.height * 0.3,
-            width: MediaQuery.of(context).size.width * 0.8,
+            height: 250,
+            width: MediaQuery.of(context).size.width * 0.9,
             decoration: const BoxDecoration(
-                borderRadius: BorderRadius.vertical(
-                    top: Radius.elliptical(150, 60),
-                    bottom: Radius.elliptical(150, 60)),
-                color: Colors.white),
+              borderRadius: BorderRadius.vertical(
+                  top: Radius.elliptical(300, 100),
+                  bottom: Radius.elliptical(300, 100)),
+              color: Colors.white,
+            ),
             child: Column(
               children: [
                 const SizedBox(
@@ -43,16 +44,72 @@ class _SignInState extends State<SignIn> {
                 ),
                 const Text(
                   'Sign In',
-                  style: TextStyle(fontWeight: FontWeight.bold, fontSize: 24),
+                  style: TextStyle(fontWeight: FontWeight.w600, fontSize: 24),
                 ),
                 const SizedBox(
                   height: 10,
                 ),
+                Padding(
+                  padding: EdgeInsets.symmetric(
+                      horizontal: MediaQuery.of(context).size.width * 0.1),
+                  child: Container(
+                    height: MediaQuery.of(context).size.height * 0.06,
+                    width: 250,
+                    decoration: BoxDecoration(
+                        color: const Color.fromRGBO(37, 43, 57, 1)
+                            .withOpacity(0.1),
+                        borderRadius: BorderRadius.circular(1000)),
+                    child: TextField(
+                      decoration: InputDecoration(
+                        hintText: 'Email/Phone',
+                        fillColor: Colors.grey[200],
+                        filled: true,
+                      ),
+                    ),
+                  ),
+                ),
+                const SizedBox(
+                  height: 8,
+                ),
+                Padding(
+                  padding: EdgeInsets.symmetric(
+                      horizontal: MediaQuery.of(context).size.width * 0.1),
+                  child: Container(
+                    height: MediaQuery.of(context).size.height * 0.06,
+                    width: 250,
+                    decoration: BoxDecoration(
+                        color: const Color.fromRGBO(37, 43, 57, 1)
+                            .withOpacity(0.1),
+                        borderRadius: BorderRadius.circular(1000)),
+                    child: TextField(
+                      decoration: InputDecoration(
+                        hintText: 'Password',
+                        fillColor: Colors.grey[200],
+                        filled: true,
+                      ),
+                    ),
+                  ),
+                ),
+                const SizedBox(
+                  height: 8,
+                ),
                 Container(
-                  alignment: Alignment.center,
-                  width: double.infinity,
-                  child: Text('Hello'),
-                )
+                  height: MediaQuery.of(context).size.height * 0.05,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(100),
+                    color: const Color.fromRGBO(37, 43, 57, 1).withOpacity(0.1),
+                  ),
+                  child: const Row(
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      Text(
+                        'Sign In',
+                        style: TextStyle(fontSize: 24),
+                      ),
+                      Icon(Icons.arrow_forward)
+                    ],
+                  ),
+                ),
               ],
             ),
           ),
